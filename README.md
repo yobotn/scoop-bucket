@@ -1,42 +1,20 @@
-# Scoop Bucket Template
+# yobotn Scoop bucket
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+[![Tests](https://github.com/yobotn/scoop-bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/yobotn/scoop-bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/yobotn/scoop-bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/yobotn/scoop-bucket/actions/workflows/excavator.yml)
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+[Scoop](https://scoop.sh) manifests for apps by [yobotn](https://github.com/yobotn).
 
-## How do I use this template?
+| App | What it does |
+|---|---|
+| [RigSweep](https://rigsweep.com/) | Frees RAM, CPU and disk on Windows dev machines: leftover dev servers and agent CLIs, `node_modules`, Rust `target` folders, package caches. Every change is reversible. |
 
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Workflow permissions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Ensure `Read repository contents and packages permissions` is selected.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
+## Install
 
-## How do I install these manifests?
-
-After manifests have been committed and pushed, run the following:
-
-```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+```powershell
+scoop bucket add yobotn https://github.com/yobotn/scoop-bucket
+scoop install yobotn/rigsweep
 ```
 
-## How do I contribute new manifests?
+RigSweep installs for all users with its own installer, which asks for admin rights.
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+Manifests are updated automatically when a new release is published.
